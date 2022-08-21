@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('get-products', [ProductController::class, 'getDataProduct']);
+Route::post('add-to-cart', [ProductController::class, 'addToCart']);
