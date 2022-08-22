@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MyCartController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,5 +21,14 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+// ! PRODUCT
+Route::post('create-product', [ProductController::class, 'createProduct']);
 Route::post('get-products', [ProductController::class, 'getDataProduct']);
 Route::post('add-to-cart', [ProductController::class, 'addToCart']);
+
+// ! CART
+Route::post('get-cart', [MyCartController::class, 'index']);
+
+// ! CATEGORY
+Route::post('create-category', [CategoryController::class, 'create']);
+Route::post('get-all-category', [CategoryController::class, 'index']);
